@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous' />
+    <title>Magic Wallet</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="side-nav">
+            <input type="checkbox" id="nav-sw-check">
+            <div class="icon-top">
+                <!-- nav-switch -->
+                <div id="nav-sw" class="icon">
+                    <i id="nav-sw-icon" class="fas fa-bars"></i>
+                    <label for="">Menu</label>
+                </div>
+                <!-- site-logo -->
+                <div class="icon img-logo">
+                    <div class="img-container">
+                        <img src="img/part.png" style="width:35px" alt="logo">
+                    </div>
+                    <label for="">Magic Wallet</label>
+                </div>
+                <!-- wallet -->
+                <div class="icon nav-links" onclick="changeView('.page','dashboard');">
+                    <i class="fa-solid fa-wallet"></i>
+                    <label for="">Dashboard</label>
+                </div>
+                <!-- exchange -->
+                <div class="icon nav-links" onclick="changeView('.page','exchange');">
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                    <label for="">Exchange</label>
+                </div>
+                <!-- savings -->
+                <div class="icon nav-links" onclick="changeView('.page','saving');">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <label for="">Savings</label>
+                </div>
+                <!-- loans -->
+                <div class="icon nav-links" onclick="changeView('.page','loan');">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                    <label for="">Loans</label>
+                </div>
+                <!-- report -->
+                <div class="icon nav-links" onclick="changeView('.page','report');">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <label for="">Report</label>
+                </div>
+                <!-- settings -->
+                <div class="icon nav-links" onclick="changeView('.page','settings');">
+                    <i class="fa-solid fa-gear"></i>
+                    <label for="">Preferences</label>
+                </div>
+
+            </div>
+            <!-- icon-top -->
+            <div class="icon-bottom">
+                <!-- proPic -->
+                <div class="icon img-logo nav-links">
+                    <div class="img-container">
+                        <img class="pro-pic" src="img/pro.jpg" alt="proPic">
+                    </div>
+                    <label for="">Username</label>
+                </div>
+                <!-- exit -->
+                <div class="icon logout-hover">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <label for="">Logout</label>
+                </div>
+
+            </div>
+            <!-- icon-bottom -->
+        </div>
+        <!-- side-nav -->
+
+        <div id="content">
+            <header>
+                <div class="header-icon">
+                    <img src="img/full.png">
+                </div>
+                <div class="header-functions">
+                    <div class="massages">
+                        <div class="mg-title">Special Massages</div>
+                        <div class="mg-text">There are no any massages...</div>
+                    </div>
+                    <!-- massages -->
+                    <!-- <div class="level">
+                        Wallet Level:
+                        <i class="fa-solid fa-medal"></i>
+                        <i class="fa-solid fa-medal"></i>
+                        <i class="fa-solid fa-medal"></i>
+                    </div> -->
+                    <!-- level -->
+                    <div class="bell">
+                        <div class="badge">10</div>
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <!-- bell -->
+                    <div class="header-pro-pic">
+                        <img class="pro-pic" src="img/pro.jpg" alt="proPic">
+                    </div>
+                    <!-- header-pro-pic -->
+
+                </div>
+                <!-- header-function -->
+            </header>
+
+            <div id="dashboard" class="page">
+                <h1>Dashboard</h1>
+                <div class="status">
+                    <div class="status-tab">
+                        <p class='status-tab-title'>Today</p>
+                        Income:&nbsp;&nbsp;&nbsp;&nbsp; 8500
+                        <br> Expends:&nbsp;&nbsp;&nbsp;&nbsp;2500
+                        <br> Balance:&nbsp;&nbsp;&nbsp;&nbsp; 6000
+                    </div>
+                    <!-- status-tab -->
+                    <div class="status-tab">
+                        <p class='status-tab-title'>Wallet</p>
+                        Income:&nbsp;&nbsp;&nbsp;&nbsp; 8500
+                        <br> Expends:&nbsp;&nbsp;&nbsp;&nbsp;2500
+                        <br> Balance:&nbsp;&nbsp;&nbsp;&nbsp; 6000
+                    </div>
+                    <!-- status-tab -->
+                </div>
+                <!-- status -->
+                <div class="filter-area">
+                    <select name="dashboard-filter" id="dashboard-filter">
+                        <option value="all">All</option>
+                        <option value="today" selected>Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+                <!-- filter-area -->
+                <div class="dashboard-table">
+
+                    <div class="table">
+                        <h1 class="caption">Income</h1>
+                        <table>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Value</th>
+                                <th>Edit</th>
+                            </tr>
+                            <tr>
+                                <td>12/11/2022</td>
+                                <td>Lorem ipsum dolor sit amet. </td>
+                                <td>2200</td>
+                                <td><button id="table-update-rec"><i class="fa-solid fa-pen"></i></button><button id="table-delete-rec"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class="table">
+                        <h1 class="caption">Expends</h1>
+                        <table>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Value</th>
+                                <th>Edit</th>
+                            </tr>
+                            <tr>
+                                <td>12/11/2022</td>
+                                <td>Lorem ipsum dolor sit amet.</td>
+                                <td>2200</td>
+                                <td><button id="table-update-rec"><i class="fa-solid fa-pen"></i></button><button id="table-delete-rec"><i class="fa-solid fa-trash"></i></button></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- table -->
+                </div>
+                <!-- table -->
+            </div>
+            <!-- #dashboard -->
+
+            <!-- ############################################### -->
+
+            <div id="exchange" class="page hide">
+                <h1>Exchange</h1>
+                <div>
+                    <div class="list">
+                        <ul>
+                            <li onclick="changeView('.exchange-link','income');">Incomes</li>
+                            <li onclick="changeView('.exchange-link','expends');" class="active-tab">Expends</li>
+                            <li onclick="changeView('.exchange-link','savings');">Savings</li>
+                            <li onclick="changeView('.exchange-link','givelone');">Give Loans</li>
+                            <li onclick="changeView('.exchange-link','takelone');">Get Loans</li>
+                        </ul>
+                    </div>
+                    <!-- list -->
+                    <div class="form-panel">
+                        <form id="income" class="exchange-link">
+                            <div class="form-title">
+                                <h2>Income</h2>
+                                <p>#41254</p>
+                            </div>
+                            <div class="text-box">
+                                <label for="">Value</label><br>
+                                <input type="number">
+                            </div>
+                            <!-- text-box -->
+                            <div class="text-box">
+                                <label for="">Description</label><br>
+                                <textarea name="" id="" cols="30" rows="5"></textarea>
+                            </div>
+                            <!-- text-box -->
+                            <button>Insert</button>
+                        </form>
+
+
+                        <form id="savings" class="exchange-link hide">
+                            <div class="form-title">
+                                <h2>Savings</h2>
+                                <p>#41254</p>
+                            </div>
+                            <div class="text-box">
+                                <label for="">Name</label><br>
+                                <input type="text">
+                            </div>
+                            <!-- text-box -->
+                            <div class="text-box">
+                                <label for="">Target</label><br>
+                                <input type="number">
+                            </div>
+                            <!-- text-box -->
+                            <button>Insert</button>
+                        </form>
+
+                        <form id="expends" class="exchange-link hide">
+                            <div class="form-title">
+                                <h2>Expends</h2>
+                                <p>#41254</p>
+                            </div>
+                            <div class="text-box">
+                                <label for="">Value</label><br>
+                                <input type="number">
+                            </div>
+                            <!-- text-box -->
+                            <div class="text-box">
+                                <label for="">Description</label><br>
+                                <textarea name="" id="" cols="30" rows="5"></textarea>
+                            </div>
+                            <!-- text-box -->
+                            <button>Insert</button>
+                        </form>
+
+                        <form id="givelone" class="exchange-link hide">
+                            <div class="form-title">
+                                <h2>Give Lone</h2>
+                                <p>#41254</p>
+                            </div>
+                            <div class="text-box">
+                                <label for="">Name</label><br>
+                                <input type="text">
+                            </div>
+                            <!-- text-box -->
+                            <div class="text-box">
+                                <label for="">Value</label><br>
+                                <input type="number">
+                            </div>
+                            <!-- text-box -->
+                            <button>Insert</button>
+                        </form>
+
+                        <form id="takelone" class="exchange-link hide">
+                            <div class="form-title">
+                                <h2>Take Lone</h2>
+                                <p>#41254</p>
+                            </div>
+                            <div class="text-box">
+                                <label for="">Name</label><br>
+                                <input type="text">
+                            </div>
+                            <!-- text-box -->
+                            <div class="text-box">
+                                <label for="">Value</label><br>
+                                <input type="number">
+                            </div>
+                            <!-- text-box -->
+                            <button>Insert</button>
+                        </form>
+                    </div>
+                    <!-- form-panel -->
+                    <div class="available-balance status-tab">
+                        <p><span>Available Balance</span><br> 25300
+                            <p>
+                    </div>
+                </div>
+            </div>
+            <!-- #exchange -->
+            <!-- ################################## -->
+            <div id="saving" class="page hide">
+                <h1>Savings</h1>
+                <div class="saving-content">
+
+                    <div class="saving-tab status-tab">
+                        <h2 class="complete-text">Collected</h2>
+                        <div class="saving-title-bar">
+                            <div>#124 </div><i class="fas fa-trash"></i>
+                        </div>
+                        <p class="saving-reason">For buy a RTX 3090</p>
+                        <p class="saving-row"><span class="saving-title">Target:</span>5000</p>
+                        <p class="saving-row"><span class="saving-title">Current Amount:</span>2800</p>
+                    </div>
+                    <!-- saving-tab -->
+                    <div class="saving-tab status-tab">
+                        <div class="saving-title-bar">
+                            <div>#124 </div><i class="fas fa-trash"></i>
+                        </div>
+                        <p class="saving-reason">For buy a RTX 3090</p>
+                        <p class="saving-row"><span class="saving-title">Target:</span>5000</p>
+                        <p class="saving-row"><span class="saving-title">Current Amount:</span>2800</p>
+                    </div>
+                    <!-- saving-tab -->
+
+                </div>
+            </div>
+            <!-- #savings -->
+
+            <div id="loan" class="page hide">
+                <h1>Loans</h1>
+                <div class="loan-content">
+                    <div class="loan-tab">
+                        <h2>Loan Taken</h2>
+                        <div class="saving-tab status-tab">
+                            <div class="saving-title-bar">
+                                <div>#124 </div><i class="fas fa-trash"></i>
+                            </div>
+                            <p class="saving-reason">For class fee</p>
+                            <p class="saving-row"><span class="saving-title">Amount:</span>5000</p>
+                            <p class="saving-row"><span class="saving-title">Current Balance:</span>2800</p>
+                        </div>
+                        <!-- saving-tab -->
+                    </div>
+                    <div class="loan-tab">
+                        <h2>Loan Given</h2>
+                        <div class="saving-tab status-tab">
+                            <h1 class="complete-text">Settled</h1>
+                            <div class="saving-title-bar">
+                                <div>#124 </div><i class="fas fa-trash"></i>
+                            </div>
+                            <p class="saving-reason">For class fee</p>
+                            <p class="saving-row"><span class="saving-title">Amount:</span>5000</p>
+                            <p class="saving-row"><span class="saving-title">Current Balance:</span>2800</p>
+                        </div>
+                        <!-- saving-tab -->
+                    </div>
+                </div>
+            </div>
+            <!-- #loans -->
+
+            <div id="report" class="page hide">
+                <h1>Report</h1>
+            </div>
+            <!-- #report -->
+
+            <div id="settings" class="page hide">
+                <h1>Settings</h1>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+    <!-- container -->
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js' integrity='sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==' crossorigin='anonymous'></script>
+<script src="js/main.js"></script>
+
+</html>
